@@ -1,0 +1,334 @@
+{
+  "info": {
+    "_postman_id": "b37e27cd-43f6-43f4-8404-f74fd8fd590c",
+    "name": "OCRTakeHome",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "4762925"
+  },
+  "item": [
+    {
+      "name": "medical_certificate",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": "/D:/OCRTakeHome/samples/medical_certificate.pdf"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8000/ocr",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "ocr"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "response",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "/D:/OCRTakeHome/samples/medical_certificate.pdf"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8000/ocr",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "ocr"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "date",
+              "value": "Thu, 16 Apr 2026 15:35:14 GMT"
+            },
+            {
+              "key": "server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "content-length",
+              "value": "370"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Processing completed.\",\n    \"result\": {\n        \"document_type\": \"medical_certificate\",\n        \"total_time\": 2.75,\n        \"finalJson\": {\n            \"claimant_name\": \"JOHN DOE\",\n            \"claimant_address\": null,\n            \"claimant_date_of_birth\": null,\n            \"diagnosis_name\": null,\n            \"discharge_date_time\": null,\n            \"icd_code\": null,\n            \"provider_name\": \"Minmed Health Screeners\",\n            \"submission_date_time\": null,\n            \"date_of_mc\": \"30/11/2022\",\n            \"mc_days\": 1\n        }\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "receipt",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": "/D:/OCRTakeHome/samples/receipt.pdf"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8000/ocr",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "ocr"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "response",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "/D:/OCRTakeHome/samples/receipt.pdf"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8000/ocr",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "ocr"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "date",
+              "value": "Thu, 16 Apr 2026 15:36:40 GMT"
+            },
+            {
+              "key": "server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "content-length",
+              "value": "270"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Processing completed.\",\n    \"result\": {\n        \"document_type\": \"receipt\",\n        \"total_time\": 2.97,\n        \"finalJson\": {\n            \"claimant_name\": \"JOHN DOE\",\n            \"claimant_address\": \"123 SAMPLE ST #01-01\",\n            \"claimant_date_of_birth\": null,\n            \"provider_name\": \"Raffles Medical\",\n            \"tax_amount\": 3,\n            \"total_amount\": 49\n        }\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "referral letter",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": "/D:/OCRTakeHome/samples/referral_letter.pdf"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8000/ocr",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "ocr"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "response",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "/D:/OCRTakeHome/samples/referral_letter.pdf"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8000/ocr",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "ocr"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "date",
+              "value": "Thu, 16 Apr 2026 15:37:34 GMT"
+            },
+            {
+              "key": "server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "content-length",
+              "value": "301"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Processing completed.\",\n    \"result\": {\n        \"document_type\": \"referral_letter\",\n        \"total_time\": 2.43,\n        \"finalJson\": {\n            \"claimant_name\": \"JOHN DOE\",\n            \"provider_name\": \"Healthway Screening @ Centrepoint\",\n            \"signature_presence\": true,\n            \"total_amount_paid\": null,\n            \"total_approved_amount\": null,\n            \"total_requested_amount\": null\n        }\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "unsupported (health screening)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": "/D:/OCRTakeHome/samples/unsupported.pdf"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8000/ocr",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "ocr"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "response",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": "/D:/OCRTakeHome/samples/unsupported.pdf"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8000/ocr",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "ocr"
+              ]
+            }
+          },
+          "status": "Unprocessable Entity",
+          "code": 422,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "date",
+              "value": "Thu, 16 Apr 2026 15:39:08 GMT"
+            },
+            {
+              "key": "server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "content-length",
+              "value": "37"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"error\": \"unsupported_document_type\"\n}"
+        }
+      ]
+    }
+  ]
+}

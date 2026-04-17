@@ -1,0 +1,1 @@
+"""OCR Document Processing Application."""
