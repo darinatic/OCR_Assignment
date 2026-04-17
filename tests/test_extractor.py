@@ -22,12 +22,12 @@ class TestBuildExtractionPrompt:
         assert "receipt" in prompt
         assert "other" in prompt
 
-    def test_prompt_includes_other_category_examples(self) -> None:
-        """Test prompt includes examples of 'other' documents."""
+    def test_prompt_includes_other_category(self) -> None:
+        """Test prompt includes 'other' document category."""
         prompt = build_extraction_prompt()
 
-        assert "other" in prompt
-        assert "lab report" in prompt.lower() or "health screening" in prompt.lower()
+        assert "other" in prompt.lower()
+        assert "don't fit" in prompt.lower() or "doesn't fit" in prompt.lower()
 
     def test_prompt_includes_referral_fields(self) -> None:
         """Test prompt includes referral letter fields."""
