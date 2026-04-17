@@ -19,22 +19,37 @@ def build_extraction_prompt() -> str:
 - "referral_letter": A letter referring a patient to another healthcare provider or specialist
 - "medical_certificate": A certificate for medical leave (MC/sick leave), stating the patient is unfit for work
 - "receipt": A payment receipt or invoice for medical services
-- "other": Documents that don't fit the above (e.g., lab reports, health screenings, blank pages)
+- "other": Documents that don't fit the above 
 
-## Extraction Fields
+## Extraction Fields (Description → JSON key)
 
 For referral_letter:
-- claimant_name, provider_name (exclude "Fullerton Health"), signature_presence (boolean)
-- total_amount_paid, total_approved_amount, total_requested_amount
+- Patient Name → claimant_name
+- Provider/Lab name (exclude "Fullerton Health") → provider_name
+- Handwritten signature detected → signature_presence (boolean)
+- Total amount paid → total_amount_paid (integer)
+- Approved amount → total_approved_amount (integer)
+- Requested amount → total_requested_amount (integer)
 
 For medical_certificate:
-- claimant_name, claimant_address, claimant_date_of_birth, diagnosis_name
-- discharge_date_time, icd_code, provider_name (exclude "Fullerton Health")
-- submission_date_time, date_of_mc, mc_days (integer)
+- Claimant Name → claimant_name
+- Address → claimant_address
+- Date of Birth → claimant_date_of_birth
+- Diagnosis → diagnosis_name
+- Discharge date → discharge_date_time
+- ICD code → icd_code
+- Provider/Lab name (exclude "Fullerton Health") → provider_name
+- Admission datetime → submission_date_time
+- Date of MC → date_of_mc
+- Number of MC days → mc_days (integer)
 
 For receipt:
-- claimant_name, claimant_address, claimant_date_of_birth
-- provider_name (exclude "Fullerton Health"), tax_amount, total_amount
+- Claimant Name → claimant_name
+- Address → claimant_address
+- Date of Birth → claimant_date_of_birth
+- Provider/Lab name (exclude "Fullerton Health") → provider_name
+- Tax amount → tax_amount (integer)
+- Total amount → total_amount (integer)
 
 ## Output
 Return JSON only:

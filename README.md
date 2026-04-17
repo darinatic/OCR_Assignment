@@ -39,6 +39,9 @@ curl -X POST http://localhost:8000/ocr -F "file=@samples/receipt.pdf"
 ```bash
 curl -X POST http://localhost:8000/ocr -F "file=@samples/unsupported.pdf"
 ```
+```bash
+curl -X POST http://localhost:8000/ocr -F "file=@samples/invalid.txt"
+```
 
 ## API
 
@@ -146,9 +149,13 @@ FinalJson = Union[ReferralLetterFields, MedicalCertificateFields, ReceiptFields,
 ## Document Types
 - "prescription": A doctor's prescription for medication
 
-## Extraction Fields
+## Extraction Fields (Description → JSON key)
 For prescription:
-- claimant_name, prescribing_doctor, medication_name, dosage, prescription_date
+- Patient Name → claimant_name
+- Prescribing Doctor → prescribing_doctor
+- Medication Name → medication_name
+- Dosage → dosage
+- Prescription Date → prescription_date
 ```
 
 **Step 4**: Add a post-processing function in `app/api.py`:
@@ -208,7 +215,7 @@ I chose the LLM approach—one API call replaces what would otherwise be a multi
 ### Why Claude?
 
 I have existing Anthropic API credits, making Claude the practical choice. The vision capabilities are strong for document understanding tasks.
-![Claude models comparison](images/model_comparison.jpg)
+[Claude models comparison](https://platform.claude.com/docs/en/about-claude/models/overview)
 
 ### Why Haiku 4.5?
 
@@ -238,6 +245,6 @@ For the `signature_presence` field, I prioritize **recall over precision**—it'
 
 | Component | Choice | Why |
 |-----------|--------|-----|
-| **Web Framework** | FastAPI | Async support, auto OpenAPI docs, built-in file upload handling |
-| **PDF Processing** | PyMuPDF | Self-contained (no Poppler), 3-5x faster than pdf2image, 300 DPI output |
+| **Web Framework** | FastAPI | Async support, auto OpenAPI / SwaggerUI docs |
+| **PDF Processing** | PyMuPDF | Self-contained, 3-5x faster than pdf2image, 300 DPI output |
 | **Validation** | Pydantic v2 | Type safety, automatic JSON serialization, fast validation |

@@ -1,13 +1,13 @@
 {
   "info": {
-    "_postman_id": "b37e27cd-43f6-43f4-8404-f74fd8fd590c",
+    "_postman_id": "b601e0b6-8389-4551-abee-d031264d990e",
     "name": "OCRTakeHome",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "4762925"
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
     {
       "name": "medical_certificate",
+      "id": "e35b2461-9f9e-429e-a569-46767c62eb99",
       "request": {
         "method": "POST",
         "header": [],
@@ -17,7 +17,9 @@
             {
               "key": "file",
               "type": "file",
-              "src": "/D:/OCRTakeHome/samples/medical_certificate.pdf"
+              "src": [
+                "/D:/OCRTakeHome/samples/medical_certificate.pdf"
+              ]
             }
           ]
         },
@@ -35,6 +37,7 @@
       },
       "response": [
         {
+          "id": "1ae4415d-aecd-439d-b8a3-d2d4e00d34ff",
           "name": "response",
           "originalRequest": {
             "method": "POST",
@@ -45,7 +48,9 @@
                 {
                   "key": "file",
                   "type": "file",
-                  "src": "/D:/OCRTakeHome/samples/medical_certificate.pdf"
+                  "src": [
+                    "/D:/OCRTakeHome/samples/medical_certificate.pdf"
+                  ]
                 }
               ]
             },
@@ -63,7 +68,7 @@
           },
           "status": "OK",
           "code": 200,
-          "_postman_previewlanguage": null,
+          "_postman_previewlanguage": "Text",
           "header": [
             {
               "key": "date",
@@ -89,6 +94,7 @@
     },
     {
       "name": "receipt",
+      "id": "42257be1-2e7f-405a-a57b-245d6c13085d",
       "request": {
         "method": "POST",
         "header": [],
@@ -98,7 +104,9 @@
             {
               "key": "file",
               "type": "file",
-              "src": "/D:/OCRTakeHome/samples/receipt.pdf"
+              "src": [
+                "/D:/OCRTakeHome/samples/receipt.pdf"
+              ]
             }
           ]
         },
@@ -116,6 +124,7 @@
       },
       "response": [
         {
+          "id": "7bb49d23-8e78-4466-b498-4ecd9072b142",
           "name": "response",
           "originalRequest": {
             "method": "POST",
@@ -126,7 +135,9 @@
                 {
                   "key": "file",
                   "type": "file",
-                  "src": "/D:/OCRTakeHome/samples/receipt.pdf"
+                  "src": [
+                    "/D:/OCRTakeHome/samples/receipt.pdf"
+                  ]
                 }
               ]
             },
@@ -144,7 +155,7 @@
           },
           "status": "OK",
           "code": 200,
-          "_postman_previewlanguage": null,
+          "_postman_previewlanguage": "Text",
           "header": [
             {
               "key": "date",
@@ -170,6 +181,7 @@
     },
     {
       "name": "referral letter",
+      "id": "d3f65985-2e0e-406b-aa24-58ecd118478b",
       "request": {
         "method": "POST",
         "header": [],
@@ -179,7 +191,9 @@
             {
               "key": "file",
               "type": "file",
-              "src": "/D:/OCRTakeHome/samples/referral_letter.pdf"
+              "src": [
+                "/D:/OCRTakeHome/samples/referral_letter.pdf"
+              ]
             }
           ]
         },
@@ -197,6 +211,7 @@
       },
       "response": [
         {
+          "id": "227e8565-198a-47e4-9c04-38735ba3b6c0",
           "name": "response",
           "originalRequest": {
             "method": "POST",
@@ -207,7 +222,9 @@
                 {
                   "key": "file",
                   "type": "file",
-                  "src": "/D:/OCRTakeHome/samples/referral_letter.pdf"
+                  "src": [
+                    "/D:/OCRTakeHome/samples/referral_letter.pdf"
+                  ]
                 }
               ]
             },
@@ -225,7 +242,7 @@
           },
           "status": "OK",
           "code": 200,
-          "_postman_previewlanguage": null,
+          "_postman_previewlanguage": "Text",
           "header": [
             {
               "key": "date",
@@ -250,7 +267,8 @@
       ]
     },
     {
-      "name": "unsupported (health screening)",
+      "name": "unsupported (health screening file)",
+      "id": "00ae8d84-a566-4be4-b2c9-10a85e81dee3",
       "request": {
         "method": "POST",
         "header": [],
@@ -260,7 +278,9 @@
             {
               "key": "file",
               "type": "file",
-              "src": "/D:/OCRTakeHome/samples/unsupported.pdf"
+              "src": [
+                "/D:/OCRTakeHome/samples/unsupported.pdf"
+              ]
             }
           ]
         },
@@ -278,6 +298,7 @@
       },
       "response": [
         {
+          "id": "6e28140c-1b40-4ff5-b9b5-7b5ba26a1c73",
           "name": "response",
           "originalRequest": {
             "method": "POST",
@@ -288,7 +309,9 @@
                 {
                   "key": "file",
                   "type": "file",
-                  "src": "/D:/OCRTakeHome/samples/unsupported.pdf"
+                  "src": [
+                    "/D:/OCRTakeHome/samples/unsupported.pdf"
+                  ]
                 }
               ]
             },
@@ -306,7 +329,7 @@
           },
           "status": "Unprocessable Entity",
           "code": 422,
-          "_postman_previewlanguage": null,
+          "_postman_previewlanguage": "Text",
           "header": [
             {
               "key": "date",
@@ -327,6 +350,142 @@
           ],
           "cookie": [],
           "body": "{\n    \"error\": \"unsupported_document_type\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "internal error (invalid API key)",
+      "id": "b2f5a0da-a7d2-456c-9fa4-339536ed68db",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": [
+        {
+          "id": "f06e2b1f-79f2-46a2-8dc5-8f10ce1e6110",
+          "name": "response",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": [
+                    "postman-cloud:///1f139a93-40f7-4300-abb6-c85522f6cd75"
+                  ]
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8000/ocr",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "ocr"
+              ]
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "date",
+              "value": "Fri, 17 Apr 2026 09:07:59 GMT"
+            },
+            {
+              "key": "server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "content-length",
+              "value": "33"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "responseTime": "2026-04-17T09:08:03.788Z",
+          "body": "{\n    \"error\": \"internal_server_error\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "file missing (invalid file type)",
+      "id": "cb118dd9-8706-4a3d-af03-74627e8ab1c1",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": [
+        {
+          "id": "dc60efbe-3568-40ac-a773-d20b791bb58f",
+          "name": "response",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": [
+                    "/D:/OCRTakeHome/samples/invalid.txt"
+                  ]
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8000/ocr",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8000",
+              "path": [
+                "ocr"
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "date",
+              "value": "Fri, 17 Apr 2026 09:10:05 GMT"
+            },
+            {
+              "key": "server",
+              "value": "uvicorn"
+            },
+            {
+              "key": "content-length",
+              "value": "24"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "responseTime": "2026-04-17T09:10:23.770Z",
+          "body": "{\n    \"error\": \"file_missing\"\n}"
         }
       ]
     }
