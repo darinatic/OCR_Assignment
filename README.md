@@ -1,6 +1,6 @@
 # OCR Document Processing Service
 
-A FastAPI microservice that classifies medical documents (referral letters, medical certificates, receipts) and extracts structured data using Claude Vision API.
+A FastAPI microservice that accepts medical documents (PDF/images), automatically classifies them, and extracts structured data for downstream claim adjudication using Claude Vision API.
 
 ![Pipeline Architecture](images/architecture.png)
 
@@ -123,6 +123,18 @@ curl -X POST http://localhost:8000/ocr -F "file=@samples/invalid.txt"
 pytest -v                      # All tests
 pytest -v -k "not Integration" # Unit tests only (no API key needed)
 ```
+
+## Postman Collection
+
+A Postman collection is included for API testing:
+
+**Location:** `postman/collections/OCRTakeHome.postman_collection.json`
+
+**To import:**
+1. Open Postman
+2. Click "Import" → "Upload Files"
+3. Select the collection JSON file
+4. Update the file paths in each request to match your local setup
 
 ## Extending to New Document Types
 
