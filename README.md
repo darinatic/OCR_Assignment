@@ -182,8 +182,7 @@ case "prescription":
 │   ├── extractor.py        # Claude Vision API
 │   └── utils.py            # Amount/date normalization
 ├── tests/                  # pytest test suite
-├── samples/                # Sample documents
-└── docs/                   # Architecture diagrams
+└── samples/                # Sample documents 
 ```
 
 ## Design Decisions
@@ -227,9 +226,8 @@ Haiku 4.5 is ~4x cheaper and ~40% faster while maintaining accurate classificati
 For the `signature_presence` field, I prioritize **recall over precision**—it's better to flag a potential signature than to miss one.
 
 **Why this matters for claim adjudication:**
-- A missed signature could mean processing an unsigned (potentially invalid) document
-- A false positive (flagging a non-signature as a signature) is easily corrected by human review
-- The cost of missing fraud indicators is higher than the cost of extra verification
+- A missed signature could flag the claim as "incomplete" or "fraudulent".
+- This could lead to claim being rejected immediately, causing unnecessary administrative overhead, customer dissatisfaction etc.
 
 **Detection approach:**
 - If any evidence of a handwritten signature is visible (even partial or obscured), marked as `true`
