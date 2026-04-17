@@ -26,7 +26,7 @@ def build_extraction_prompt() -> str:
 For referral_letter:
 - Patient Name → claimant_name
 - Provider/Lab name (exclude "Fullerton Health") → provider_name
-- Handwritten signature detected → signature_presence (boolean)
+- Handwritten signature detected → signature_presence (boolean: true if any signature evidence visible, even partial/obscured; only false if clearly empty or printed text only)
 - Total amount paid → total_amount_paid (integer)
 - Approved amount → total_approved_amount (integer)
 - Requested amount → total_requested_amount (integer)
