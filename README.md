@@ -1,5 +1,7 @@
 # OCR Document Processing Service
 
+[![Tests](https://github.com/darinatic/OCR_Assignment/actions/workflows/test.yml/badge.svg)](https://github.com/darinatic/OCR_Assignment/actions/workflows/test.yml)
+
 A FastAPI microservice that accepts medical documents (PDF/images), automatically classifies them, and extracts structured data for downstream claim adjudication using Claude Vision API.
 
 ![Pipeline Architecture](images/architecture.png)
@@ -120,9 +122,11 @@ curl -X POST http://localhost:8000/ocr -F "file=@samples/invalid.txt"
 ## Running Tests
 
 ```bash
-pytest -v                      # All tests
+pytest -v                      # All tests (requires ANTHROPIC_API_KEY)
 pytest -v -k "not Integration" # Unit tests only (no API key needed)
 ```
+
+**CI/CD:** Unit tests run automatically on push/PR via GitHub Actions.
 
 ## Postman Collection
 

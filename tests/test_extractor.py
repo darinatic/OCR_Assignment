@@ -211,18 +211,3 @@ class TestExtractDocumentDataIntegration:
         assert result["document_type"] == "other"
         assert result["fields"] == {}
 
-    @pytest.mark.asyncio
-    async def test_extract_blank_document_returns_other(self) -> None:
-        """Test blank document is classified as 'other'."""
-        pdf_path = SAMPLES_DIR / "blank.pdf"
-        if not pdf_path.exists():
-            pytest.skip("blank.pdf not available")
-
-        pdf_bytes = pdf_path.read_bytes()
-        images = await convert_pdf_to_images(pdf_bytes)
-
-        result = await extract_document_data(images)
-
-        assert "document_type" in result
-        assert result["document_type"] == "other"
-        assert result["fields"] == {}

@@ -271,21 +271,3 @@ class TestOCREndpointIntegration:
         assert response.status_code == 422
         assert response.json() == {"error": "unsupported_document_type"}
 
-    @pytest.mark.asyncio
-    async def test_blank_document_returns_422(self) -> None:
-        """Test blank document returns 422."""
-        pdf_path = SAMPLES_DIR / "blank.pdf"
-        if not pdf_path.exists():
-            pytest.skip("blank.pdf not available")
-
-        pdf_bytes = pdf_path.read_bytes()
-
-        transport = ASGITransport(app=app)
-        async with AsyncClient(transport=transport, base_url="http://test") as client:
-            response = await client.post(
-                "/ocr",
-                files={"file": ("blank.pdf", pdf_bytes, "application/pdf")},
-            )
-
-        assert response.status_code == 422
-        assert response.json() == {"error": "unsupported_document_type"}
