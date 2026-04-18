@@ -182,6 +182,7 @@ def post_process_prescription(fields: dict[str, Any]) -> PrescriptionFields:
         prescribing_doctor=fields.get("prescribing_doctor"),
         medication_name=fields.get("medication_name"),
         dosage=fields.get("dosage"),
+        # Normalize date to DD/MM/YYYY (e.g., "15-Jan-2025" → "15/01/2025")
         prescription_date=format_date(fields.get("prescription_date")),
     )
 ```
